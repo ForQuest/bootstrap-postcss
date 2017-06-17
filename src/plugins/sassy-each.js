@@ -85,7 +85,7 @@ function processEach(rule) {
 }
 
 function processLoop(css) {
-  css.eachAtRule('each', processEach);
+  css.walkAtRules('each', processEach);
 };
 
 module.exports = postcss.plugin('postcss-each', function(opts) {

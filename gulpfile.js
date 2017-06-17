@@ -89,7 +89,7 @@ gulp.task('postcss', function() {
           // map-keys($var) => $var
           'map-keys': funcs['map-keys'],
           // rgba(x,x,x, 1) => #xxxxxx
-          'rgba': funcs['rgba']
+          //'rgba': funcs['rgba']
         }
       }),
     ], {syntax: scss}))

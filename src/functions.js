@@ -98,27 +98,9 @@ module.exports = {
   percentage: function(exp) {
     return (Number(safeEval(exp)) * 100).toFixed(5) + '%'
   },
-  lighten: function(color, amount) {
-    return colorFunc('lightness', color, amount)
-  },
-  darken: function(color, amount) {
-    return colorFunc('lightness', color, '-' + amount)
-  },
-  'fade-in': function(color, amount) {
-    var val = convertToNum(amount).value
-    var result = one(color)
-    result = result.alpha(result.alpha() + val)
-    return result.alpha() >= 1 ? result.hex().toLowerCase() : result.cssa()
-  },
   'map-keys': function(map) {
     var ret = Object.keys(mapToHash(map)).join(', ')
     return ret
-  },
-  // Hack to replace rgba with alpha 1 with hex color
-  rgba: function() {
-    var str = 'rgba(' + Array.prototype.join.call(arguments, [',']) + ')'
-    var color = one(str)
-    return color.alpha() >= 1 ? color.hex().toLowerCase() : str
   },
   'ie-hex-str': function(color) {
     var c = one(color)
